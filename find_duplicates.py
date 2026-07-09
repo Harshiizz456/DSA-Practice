@@ -1,12 +1,13 @@
 lst = [1, 2, 3, 2, 4, 1]
 
-seen = set()
-duplicates = set()
+seen = []
+duplicates = []
 
 for num in lst:
     if num in seen:
-        duplicates.add(num)
+        if num not in duplicates:
+            duplicates.append(num)
     else:
-        seen.add(num)
+        seen.append(num)
 
-print("Duplicate elements:", list(duplicates))
+print(duplicates)
